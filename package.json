@@ -1,0 +1,29 @@
+{
+    "name": "electron-dockable",
+    "author": "Luma",
+    "description": "Dockable windows framework for electron",
+    "dependencies": {
+        "chalk": "^1.1.1",
+        "globby": "^6.0.0",
+        "fs-extra": "^0.30.0",
+        "uuid": "^3.0.1"
+    },
+    "devDependencies": {
+        "yargs": "^5.0.0",
+        "electron": "^1.6.1",
+        "less": "^2.6.1",
+        "less-plugin-clean-css": "^1.5.1"
+    },
+    "keywords": [
+        "Electron",
+        "dock",
+        "dockable",
+        "window",
+        "panel"
+    ],
+    "version": "1.0.0",
+    "scripts" : {
+        "less": "node ./tasks/build-css.js --min",
+        "less-debug": "node ./tasks/build-css.js"
+    }
+}

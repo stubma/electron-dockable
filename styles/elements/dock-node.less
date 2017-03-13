@@ -1,0 +1,56 @@
+@element: 'dock-node';
+@import (multiple) 'theme.less';
+
+:host {
+  position: relative;
+  flex: 1;
+  box-sizing: border-box;
+  font-size: @font_size;
+  overflow: hidden;
+  color: @page_text_color;
+  background-color: @page_bg;
+  z-index: 2;
+}
+
+:host(#root) {
+  &:extend(:host);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.content {
+  .fit();
+  .layout-vertical();
+}
+
+.content:focus {
+  outline: none;
+}
+
+:host([horizontal]) > .content {
+  flex-direction: row;
+}
+
+#empty-hint {
+  .fit();
+  .layout-vertical();
+  .layout-children(center, center);
+}
+
+#debug-select-node {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  z-index: 1;
+  background: url("theme://img/debug_select_node.png");
+}
+
+#debug-select-node:hover {
+  background: url("theme://img/debug_select_node_hover.png");
+}

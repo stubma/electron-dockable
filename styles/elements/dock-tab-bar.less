@@ -1,0 +1,57 @@
+@element: 'dock-tab-bar';
+@import (multiple) 'theme.less';
+
+@import url('theme://globals/fontello.css');
+
+:host {
+  position: relative;
+  display: inline-block;
+  height: @tab_bar_height;
+  border-left: 1px solid @tab_bar_border_color;
+  border-top: 1px solid @tab_bar_border_color;
+  border-bottom: 1px solid @tab_bar_border_color;
+  box-sizing: border-box;
+  font-size: @tab_font_size;
+  color: @tab_text_color;
+  z-index: 1;
+}
+
+.border {
+  .layout-horizontal;
+  .layout-children(center);
+  height: @tab_bar_height - 2;
+  box-sizing: border-box;
+  border-bottom: 3px solid @tab_bar_inner_border_color;
+}
+
+.tab-bar {
+  .layout-horizontal;
+  .flex(1);
+  overflow: hidden;
+  height: @tab_bar_height - 5;
+  background-color: @tab_bar_bg;
+}
+
+.insert {
+  display: none;
+  position: absolute;
+  box-sizing: border-box;
+  height: 100%;
+
+  pointer-events: none;
+  border: 1px solid @tabmask_insert_color;
+}
+
+.icon {
+  color: #777;
+  margin-left: 10px;
+}
+
+.icon.hide {
+  display: none;
+}
+
+.icon:hover {
+  color: #aaa;
+  cursor: pointer;
+}

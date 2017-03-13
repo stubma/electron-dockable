@@ -1,0 +1,12 @@
+@element: 'dock-panel-frame';
+@import (multiple) 'theme.less';
+
+:host {
+  .fit();
+  .layout-vertical();
+  .layout-children(center, center);
+  box-sizing: border-box;
+  color: @page_text_color;
+  cursor: default;
+  display: none;
+}

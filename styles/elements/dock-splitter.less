@@ -1,0 +1,85 @@
+@element: 'dock-splitter';
+@import (multiple) 'theme.less';
+
+:host {
+  flex: 0 0 @splitter_size; /*size*/
+  position: absolute;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.bar {
+  position: absolute;
+  top: 4px;
+  left: 0px;
+  height: 1px;
+  width: 100%;
+}
+
+:host([active]) > .bar {
+  background-color: @el_focus_color;
+}
+
+:host([horizontal]) {
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  margin-top: -4px; /*blank-size*/
+  margin-bottom: -4px; /*blank-size*/
+  margin-left: 0px;
+  margin-right: 0px;
+  width: auto;
+  height: @splitter_size; /*size*/
+}
+
+:host([vertical]) {
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: -4px; /*blank-size*/
+  margin-right: -4px; /*blank-size*/
+  width: @splitter_size; /*size*/
+  height: auto;
+}
+
+:host([vertical]) > .bar {
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  width: 1px;
+  height: 100%;
+}
+
+:host(:hover) {
+  cursor: row-resize;
+}
+
+:host(:hover) > .bar {
+  cursor: row-resize;
+}
+
+:host([vertical]:hover) {
+  cursor: col-resize;
+}
+
+:host([vertical]:hover) > .bar {
+  cursor: col-resize;
+}
+
+:host(.platform-win:hover) {
+  cursor: ns-resize;
+}
+
+:host(.platform-win:hover) > .bar {
+  cursor: ns-resize;
+}
+
+:host(.platform-win[vertical]:hover) {
+  cursor: ew-resize;
+}
+
+:host(.platform-win[vertical]:hover) > .bar {
+  cursor: ew-resize;
+}
