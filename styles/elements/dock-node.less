@@ -34,6 +34,16 @@
   flex-direction: row;
 }
 
+.drop-side-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: @drop_side_indicator_border_width solid @drop_side_indicator_border_color;
+  z-index: 999;
+}
+
 #empty-hint {
   .fit();
   .layout-vertical();
