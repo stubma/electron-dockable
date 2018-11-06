@@ -26,7 +26,7 @@
 	});
 
 	// limit zooming
-	webFrame.setZoomLevelLimits(1, 1);
+	webFrame.setLayoutZoomLevelLimits(1, 1);
 
 	// init & cache remote
 	let rootWin = remote.getCurrentWindow();
